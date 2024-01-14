@@ -1,0 +1,1 @@
+ALTER TABLE "code" ADD COLUMN "description" text NOT NULL;

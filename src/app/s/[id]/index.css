@@ -1,0 +1,7 @@
+.snippetDescription h1, p {
+    margin: 0;
+}
+
+.snippetDescription p:last-of-type {
+    margin-bottom: 10px;
+}

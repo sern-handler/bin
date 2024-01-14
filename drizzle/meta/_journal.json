@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1705152102873,
+      "tag": "0000_ambiguous_mach_iv",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1705163965392,
+      "tag": "0001_complete_master_chief",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1705241267004,
+      "tag": "0002_lovely_inhumans",
+      "breakpoints": true
+    }
+  ]
+}
