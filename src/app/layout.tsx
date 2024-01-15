@@ -13,7 +13,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'sern bin',
-  description: 'A sern-centric snippet sharing platform'
+  description: 'A sern-centric snippet sharing platform',
+  metadataBase: new URL('https://bin.sern.dev')
 }
 
 export default function RootLayout({
