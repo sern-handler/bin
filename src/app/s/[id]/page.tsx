@@ -5,6 +5,7 @@ import {eq} from "drizzle-orm";
 import {redirect} from "next/navigation";
 import {clerkClient} from "@clerk/nextjs";
 import MonacoEditor from "@/components/MonacoEditor/MonacoEditor";
+import {Metadata} from "next";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const query = await db.query.code.findFirst({
@@ -26,4 +27,26 @@ export default async function Page({ params }: { params: { id: string } }) {
       <MonacoEditor readOnly={true} defaultValue={query.code} defaultLanguage={query.lang} />
     </div>
   )
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const query = await db.query.code.findFirst({
+    where: eq(schema.code.id, params.id)
+  }).execute()
+  if (!query) return { title: 'Snippet not found' }
+  return {
+    title: query.fileName,
+    description: query.description,
+    authors: [{ name: query.authorId }],
+    openGraph: {
+      title: query.fileName,
+      description: query.description,
+      authors: [query.authorId],
+    }
+  }
+}
+
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
