@@ -1,12 +1,21 @@
 'use client'
 
-import {Editor} from "@monaco-editor/react";
+import {Editor, useMonaco} from "@monaco-editor/react";
 import {useUser} from "@clerk/nextjs";
+import React from "react";
 
 export default function MonacoEditor(props: Props) {
   const clerk = useUser()
+  const monaco = useMonaco()
+  React.useEffect(() => {
+    if (!monaco || !props.defaultLanguage) return
+    try {
+      monaco.editor.setModelLanguage(monaco.editor.getModels()[0], props.defaultLanguage)
+    } catch {}
+  },[props.defaultLanguage])
+
   return clerk.isLoaded && <Editor
-      height={props.height || '40vw'}
+      height={props.height || '60vh'}
       options={{
         readOnly: props.readOnly,
       }}

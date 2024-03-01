@@ -43,7 +43,9 @@ export default function CreateSnippet() {
         <Select
           placeholder="Select language"
           data={['Typescript', 'Javascript']}
-          onChange={(ev) => setSnippet({ ...snippet, lang: ev as "javascript" | "typescript" })}
+          defaultValue={'Typescript'}
+          allowDeselect={false}
+          onChange={(ev) => setSnippet({ ...snippet, lang: ev!.toLowerCase() as "javascript" | "typescript" })}
         />
         <Button
           variant={'filled'}
@@ -72,7 +74,7 @@ export default function CreateSnippet() {
         </Button>
       </div>
       <div className={styles.monaco}>
-        <MonacoEditor setEditorText={setEditorText} readOnly={false} />
+        <MonacoEditor setEditorText={setEditorText} readOnly={false} defaultLanguage={snippet.lang} />
       </div>
     </main>
   )
