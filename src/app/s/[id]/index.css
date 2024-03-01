@@ -5,3 +5,12 @@
 .snippetDescription p:last-of-type {
     margin-bottom: 10px;
 }
+
+.markdownViewer {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+}

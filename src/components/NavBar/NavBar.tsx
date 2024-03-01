@@ -22,6 +22,7 @@ import {usePathname} from "next/navigation";
 };*/
 const links = [
   { link: '/', label: 'Create' },
+  { link: '/md', label: 'Markdown' },
   { link: '/me', label: 'My snippets' },
 ];
 
