@@ -15,11 +15,6 @@ import Link from 'next/link';
 import {useRouter} from "next-nprogress-bar";
 import {usePathname} from "next/navigation";
 
-/*const user = {
-  name: 'Jane Spoonfighter',
-  email: 'janspoon@fighter.dev',
-  image: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-5.png',
-};*/
 const links = [
   { link: '/', label: 'Create' },
   { link: '/md', label: 'Markdown' },

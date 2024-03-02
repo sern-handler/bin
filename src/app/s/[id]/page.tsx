@@ -43,13 +43,14 @@ export default async function Page({ params }: { params: { id: string } }) {
                     codeTagProps={{ className: 'codeHighlighter' }}
                     language={match[1]}
                     // eslint-disable-next-line react/no-children-prop
-                    children={String(children).replace(/\n$/, '')}
+                    children={String(children)}
                   />
                 ) : (
                   <code className={className} {...props} style={{
                     fontSize: '1rem',
                     backgroundColor: '#171717',
-                    outline: '3px solid #171717'
+                    outline: '3px solid #171717',
+                    color: 'white',
                   }}>
                     {children}
                   </code>
