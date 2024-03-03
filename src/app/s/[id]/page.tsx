@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     redirect('/s-notfound')
   }
 
-  const user = await clerkClient.users.getUser(query.authorId)
+  const user = await clerkClient.users.getUser(query.authorId).catch(() => { return { username: 'Unknown' } })
   return (
     <div>
       <div className='snippetDescription'>
